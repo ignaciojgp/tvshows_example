@@ -26,4 +26,8 @@ public class Resolver: NSObject {
         
     }
 
+    func getTVShowDetailDataSource() -> TVShowDetailViewControllerDataSource {
+        return allShowListService
+    }
+    
 }

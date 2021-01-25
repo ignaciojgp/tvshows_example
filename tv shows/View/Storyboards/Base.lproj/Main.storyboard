@@ -158,8 +158,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwT-fz-241">
-                                                    <rect key="frame" x="192" y="28" width="30" height="30"/>
-                                                    <state key="normal" title="Link"/>
+                                                    <rect key="frame" x="174.5" y="28" width="65" height="30"/>
+                                                    <state key="normal" title="More info"/>
+                                                    <connections>
+                                                        <action selector="onTapIMDB:" destination="N1S-zM-ydm" eventType="touchUpInside" id="2Ty-aY-aLo"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -176,8 +179,16 @@
                             <outlet property="delegate" destination="N1S-zM-ydm" id="6oN-nx-FEN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="GCN-Th-qth"/>
+                    <navigationItem key="navigationItem" id="GCN-Th-qth">
+                        <barButtonItem key="rightBarButtonItem" image="star" catalog="system" id="0Nl-JX-1ul">
+                            <connections>
+                                <action selector="onFabButton:" destination="N1S-zM-ydm" id="pNd-6G-ZjO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="IMBDLink" destination="JwT-fz-241" id="LZg-Dz-p1O"/>
+                        <outlet property="fabButton" destination="0Nl-JX-1ul" id="8AI-1g-o8o"/>
                         <outlet property="posterImage" destination="lgp-qX-g3T" id="fny-Uz-LLa"/>
                         <outlet property="summaryLabel" destination="lsk-dT-k3Q" id="swl-Ce-oJx"/>
                     </connections>
@@ -282,10 +293,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8kl-Ob-XJT"/>
+        <segue reference="WUH-A1-3Vb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ExamplePoster" width="210" height="295"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -9,7 +9,7 @@ import UIKit
 
 
 
-public class ShowListService:NSObject, TVShowTableViewControllerDataSource {
+public class ShowListService:NSObject, TVShowTableViewControllerDataSource, TVShowDetailViewControllerDataSource {
     
     func shouldShowAsFavourite(id: Int64) -> Bool {
         return Resolver.shared.localDataHelper.getEntity(name: .tvShow, by: id) != nil
@@ -59,8 +59,16 @@ public class AllShowListService: ShowListService {
         
         if(chachedList == nil){
             Resolver.shared.remoteDataHelper.getShowsList { (list, error) in
-                self.chachedList = list
-                onresult(list, error)
+                
+                
+                let sorted  = list?.sorted(by: { (a, b) -> Bool in
+                    guard let aname = a.name else {return false}
+                    guard let bname = b.name else {return false}
+                    return aname.localizedStandardCompare(bname) == .orderedAscending
+                })
+                
+                self.chachedList = sorted
+                onresult(sorted, error)
             }
         }else{
             onresult(chachedList, nil)

@@ -12,7 +12,7 @@ protocol TVShowTableViewControllerDataSource {
     func getShowsList(onresult:@escaping  (Array<RemoteTVShow>?, Error?)->Void)->Void
     func getImageWithUrl(urlString:NSString, onGetImage: @escaping (UIImage?)->Void)
     func shouldShowAsFavourite(id:Int64) ->Bool
-    func changeFavouriteState(tvShow: RemoteTVShow)-> Void
+    func changeFavouriteState(tvShow: RemoteTVShow) throws -> Void
 }
 
 class TVShowTableViewController: UITableViewController {
@@ -23,13 +23,16 @@ class TVShowTableViewController: UITableViewController {
 
     var itemsList = Array<RemoteTVShow>()
     var dataSource: TVShowTableViewControllerDataSource?
+    var isFavourites = false
+    
+    var deletedRows = Array<Int>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.dataSource = Resolver.shared.getTVShowTableViewDataSourceWithName(name: self.navigationItem.title ?? "")
         
-        
+        isFavourites =  self.navigationItem.title!.elementsEqual("Favourites")
         
     }
     
@@ -50,8 +53,16 @@ class TVShowTableViewController: UITableViewController {
                     
                 }
                 
+            }else{
+                self.showErrorAlert()
             }
         })
+    }
+    
+    func showErrorAlert(){
+        AlertHelper.showRetryAlert(viewController: self, message: .fetch) {
+            self.loadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -100,7 +111,13 @@ class TVShowTableViewController: UITableViewController {
     
     
     func changeFavouriteState(_ tvShow:RemoteTVShow){
-        self.dataSource?.changeFavouriteState(tvShow: tvShow)
+        do{
+            try self.dataSource?.changeFavouriteState(tvShow: tvShow)
+        }catch{
+            AlertHelper.showRetryAlert(viewController: self, message: .deleteMessage) {
+                self.changeFavouriteState(tvShow)
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -113,13 +130,55 @@ class TVShowTableViewController: UITableViewController {
         
         let action = UIContextualAction(style: .normal, title: favourite ? "Delete":"Favourite" ) {
             [weak self] (action, view, completionHandler) in
-            self?.changeFavouriteState(tvShowInfo)
+            
+            
+            if(favourite){
+                self?.deleteItem(tvShow: tvShowInfo, indexpath: indexPath)
+                
+            }else{
+                self?.addFavourite(tvShow: tvShowInfo)
+            }
+            
             completionHandler(true)
         }
         action.backgroundColor = favourite ? .systemRed : .systemGreen
         return UISwipeActionsConfiguration(actions: [action])
     }
     
+    
+    func deleteItem(tvShow: RemoteTVShow, indexpath:IndexPath){
+        let alert = UIAlertController(title: "Wait", message: "Are you sure to delete this favourite", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
+            
+            
+            self.changeFavouriteState(tvShow)
+            
+            if(self.isFavourites){
+                self.tableView.beginUpdates()
+                
+                self.itemsList.remove(at: indexpath.row)
+                
+                
+                self.tableView.deleteRows(at: [indexpath], with: .fade)
+                
+                self.tableView.endUpdates()
+
+            }
+
+            
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
+            print("delete canceled")
+        }))
+        
+        self.present(alert, animated: true) {
+            
+        }
+    }
+    
+    func addFavourite(tvShow: RemoteTVShow){
+        self.changeFavouriteState(tvShow)
+    }
     
     // MARK: - Navigation
 

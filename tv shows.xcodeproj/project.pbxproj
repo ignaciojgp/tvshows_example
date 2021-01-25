@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,8 @@
 		FF8D0CD625BCD2D4003138D9 /* RemoteDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D0CD525BCD2D4003138D9 /* RemoteDataHelper.swift */; };
 		FF8D0CDB25BCD31D003138D9 /* APIServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D0CDA25BCD31D003138D9 /* APIServiceTest.swift */; };
 		FF8D0CE425BCD69F003138D9 /* RemoteTVShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D0CE325BCD69F003138D9 /* RemoteTVShow.swift */; };
+		FFFCC49525BE53B500CB9AA8 /* BrowserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFCC49425BE53B500CB9AA8 /* BrowserHelper.swift */; };
+		FFFCC4A025BE5F0C00CB9AA8 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFCC49F25BE5F0C00CB9AA8 /* AlertHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		FF8D0CD525BCD2D4003138D9 /* RemoteDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataHelper.swift; sourceTree = "<group>"; };
 		FF8D0CDA25BCD31D003138D9 /* APIServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTest.swift; sourceTree = "<group>"; };
 		FF8D0CE325BCD69F003138D9 /* RemoteTVShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTVShow.swift; sourceTree = "<group>"; };
+		FFFCC49425BE53B500CB9AA8 /* BrowserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserHelper.swift; sourceTree = "<group>"; };
+		FFFCC49F25BE5F0C00CB9AA8 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 			children = (
 				FF6D3D6025BCF9740091759C /* LocalDataHelper.swift */,
 				FF8D0CD525BCD2D4003138D9 /* RemoteDataHelper.swift */,
+				FFFCC49425BE53B500CB9AA8 /* BrowserHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				FF8D0C9325BCCC1F003138D9 /* ViewController.swift */,
 				FF6D3D7425BCFF060091759C /* TVShowTableViewController.swift */,
 				FF6D3D7925BD02FA0091759C /* TVShowDetailViewController.swift */,
+				FFFCC49F25BE5F0C00CB9AA8 /* AlertHelper.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -445,8 +451,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFFCC4A025BE5F0C00CB9AA8 /* AlertHelper.swift in Sources */,
 				FF6D3D7A25BD02FA0091759C /* TVShowDetailViewController.swift in Sources */,
 				FF6D3D6125BCF9740091759C /* LocalDataHelper.swift in Sources */,
+				FFFCC49525BE53B500CB9AA8 /* BrowserHelper.swift in Sources */,
 				FF24FE8E25BDE7E300C17E3E /* ShowListService.swift in Sources */,
 				FF8D0C9425BCCC1F003138D9 /* ViewController.swift in Sources */,
 				FF8D0C9025BCCC1F003138D9 /* AppDelegate.swift in Sources */,
@@ -634,13 +642,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7RFG3R7R9K;
+				DEVELOPMENT_TEAM = ZF593C5763;
 				INFOPLIST_FILE = "tv shows/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ignaciojpg.tv-shows";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ignaciojpg.tvshows;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -654,13 +662,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7RFG3R7R9K;
+				DEVELOPMENT_TEAM = ZF593C5763;
 				INFOPLIST_FILE = "tv shows/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ignaciojpg.tv-shows";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ignaciojpg.tvshows;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

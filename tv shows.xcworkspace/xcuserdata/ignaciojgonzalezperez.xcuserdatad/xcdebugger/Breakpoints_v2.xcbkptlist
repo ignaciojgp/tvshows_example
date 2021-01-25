@@ -30,8 +30,8 @@
             filePath = "tv shows/View/ViewControllers/TVShowDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,58 +46,10 @@
             filePath = "tv shows/View/ViewControllers/TVShowTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C46D95C9-6EBE-4A36-8319-F508EC78FBD6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tv shows/View/ViewControllers/TVShowTableViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "loadData()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C46D95C9-6EBE-4A36-8319-F508EC78FBD6 - bcf363f6d3cb1ffd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "tv_shows.TVShowTableViewController.loadData() -&gt; ()"
-                  moduleName = "tv shows"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ignaciojgonzalezperez/Documents/experimental/tv%20shows/tv%20shows/View/ViewControllers/TVShowTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "55">
-               </Location>
-               <Location
-                  uuid = "C46D95C9-6EBE-4A36-8319-F508EC78FBD6 - 4a591b23c012dbf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;tv_shows.RemoteTVShow&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in tv_shows.TVShowTableViewController.loadData() -&gt; ()"
-                  moduleName = "tv shows"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ignaciojgonzalezperez/Documents/experimental/tv%20shows/tv%20shows/View/ViewControllers/TVShowTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "185">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -137,6 +89,22 @@
                   offsetFromSymbolStart = "0">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEB5276B-9D31-47FF-ACEF-DBC6C9FC59F2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tv shows/View/ViewControllers/TVShowTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "loadData()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

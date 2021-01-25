@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 
 
@@ -16,6 +15,14 @@ public class RemoteDataHelper: NSObject {
     let imageCache = NSCache<NSString, UIImage>()
     lazy var defaultimage:UIImage? = { return UIImage(named: "ExamplePoster") }()
     
+    lazy var customURLSession:URLSession = {
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = 5.0
+        sessionConfig.timeoutIntervalForResource = 5.0
+        let session = URLSession(configuration: sessionConfig)
+        return session
+    }()
+    
     
     func getImageWithUrl(urlString: NSString, onGetImage: @escaping  (UIImage?) -> Void) {
         
@@ -24,7 +31,7 @@ public class RemoteDataHelper: NSObject {
         }else{
             let url = URL(string: urlString as String)!
 
-            let task = URLSession.shared.dataTask(with: url) { [weak self]
+            let task = customURLSession.dataTask(with: url) { [weak self]
                 (data, response, error) in
                 guard let data = data else { onGetImage(self?.defaultimage); return }
                 guard let image = UIImage(data: data) else { onGetImage(self?.defaultimage); return }
@@ -41,8 +48,13 @@ public class RemoteDataHelper: NSObject {
         
         let url = URL(string: "http://api.tvmaze.com/shows")!
 
-        let task = URLSession.shared.dataTask(with: url) {
+        let task = customURLSession.dataTask(with: url) {
             (data, response, error) in
+            
+            if(error != nil){
+                onresult(nil, error)
+                return
+            }
             
             guard let data = data else { return }
             let resultString =  String(data: data, encoding: .utf8)
