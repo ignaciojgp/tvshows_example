@@ -25,7 +25,7 @@
 		FF8D0CAA25BCCC20003138D9 /* tv_showsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D0CA925BCCC20003138D9 /* tv_showsTests.swift */; };
 		FF8D0CB525BCCC21003138D9 /* tv_showsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D0CB425BCCC21003138D9 /* tv_showsUITests.swift */; };
 		FF8D0CD625BCD2D4003138D9 /* RemoteDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D0CD525BCD2D4003138D9 /* RemoteDataHelper.swift */; };
-		FF8D0CDB25BCD31D003138D9 /* APIServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D0CDA25BCD31D003138D9 /* APIServiceTest.swift */; };
+		FF8D0CDB25BCD31D003138D9 /* HelpersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D0CDA25BCD31D003138D9 /* HelpersTest.swift */; };
 		FF8D0CE425BCD69F003138D9 /* RemoteTVShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D0CE325BCD69F003138D9 /* RemoteTVShow.swift */; };
 		FFFCC49525BE53B500CB9AA8 /* BrowserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFCC49425BE53B500CB9AA8 /* BrowserHelper.swift */; };
 		FFFCC4A025BE5F0C00CB9AA8 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFCC49F25BE5F0C00CB9AA8 /* AlertHelper.swift */; };
@@ -79,7 +79,7 @@
 		FF8D0CB425BCCC21003138D9 /* tv_showsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tv_showsUITests.swift; sourceTree = "<group>"; };
 		FF8D0CB625BCCC21003138D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF8D0CD525BCD2D4003138D9 /* RemoteDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataHelper.swift; sourceTree = "<group>"; };
-		FF8D0CDA25BCD31D003138D9 /* APIServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTest.swift; sourceTree = "<group>"; };
+		FF8D0CDA25BCD31D003138D9 /* HelpersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpersTest.swift; sourceTree = "<group>"; };
 		FF8D0CE325BCD69F003138D9 /* RemoteTVShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTVShow.swift; sourceTree = "<group>"; };
 		FFFCC49425BE53B500CB9AA8 /* BrowserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserHelper.swift; sourceTree = "<group>"; };
 		FFFCC49F25BE5F0C00CB9AA8 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 			children = (
 				FF8D0CA925BCCC20003138D9 /* tv_showsTests.swift */,
 				FF8D0CAB25BCCC20003138D9 /* Info.plist */,
-				FF8D0CDA25BCD31D003138D9 /* APIServiceTest.swift */,
+				FF8D0CDA25BCD31D003138D9 /* HelpersTest.swift */,
 			);
 			path = "tv showsTests";
 			sourceTree = "<group>";
@@ -471,7 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF8D0CDB25BCD31D003138D9 /* APIServiceTest.swift in Sources */,
+				FF8D0CDB25BCD31D003138D9 /* HelpersTest.swift in Sources */,
 				FF8D0CAA25BCCC20003138D9 /* tv_showsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
