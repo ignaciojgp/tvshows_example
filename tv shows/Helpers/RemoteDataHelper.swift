@@ -11,6 +11,9 @@ import UIKit
 
 
 public class RemoteDataHelper: NSObject {
+    
+    final let  TVSHOWS_URL = "http://api.tvmaze.com/shows"
+    
     let decoder = JSONDecoder()
     let imageCache = NSCache<NSString, UIImage>()
     lazy var defaultimage:UIImage? = { return UIImage(named: "ExamplePoster") }()
@@ -46,7 +49,7 @@ public class RemoteDataHelper: NSObject {
 
     public func getShowsList(onresult: @escaping (Array<RemoteTVShow>?, Error?)->Void) {
         
-        let url = URL(string: "http://api.tvmaze.com/shows")!
+        let url = URL(string: TVSHOWS_URL)!
 
         let task = customURLSession.dataTask(with: url) {
             (data, response, error) in
@@ -57,9 +60,7 @@ public class RemoteDataHelper: NSObject {
             }
             
             guard let data = data else { return }
-            let resultString =  String(data: data, encoding: .utf8)
             
-            debugPrint(resultString ?? "null result");
             
             do{
                 let list = try self.decoder.decode(Array<RemoteTVShow>.self, from: data)

@@ -34,6 +34,11 @@ class TVShowTableViewController: UITableViewController {
         
         isFavourites =  self.navigationItem.title!.elementsEqual("Favourites")
         
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,18 +47,25 @@ class TVShowTableViewController: UITableViewController {
         loadData()
     }
 
-    func loadData(){
+    @IBAction  func loadData(){
         dataSource?.getShowsList(onresult: { (list, error) in
+            
             if(error == nil){
                 self.itemsList = list!
                 
                 DispatchQueue.main.async {
-                    
+                    self.refreshControl?.endRefreshing()
+
                     self.tableView.reloadData()
                     
                 }
                 
             }else{
+                DispatchQueue.main.async {
+                    self.refreshControl?.endRefreshing()
+
+                    
+                }
                 self.showErrorAlert()
             }
         })
