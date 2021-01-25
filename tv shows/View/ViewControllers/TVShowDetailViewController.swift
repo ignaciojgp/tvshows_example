@@ -40,7 +40,7 @@ class TVShowDetailViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = UIColor.orange
-        //        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+
         navigationController?.navigationBar.tintColor = UIColor.white // change the navigation background color
         
         self.datasource?.getImageWithUrl(urlString: tvShowInfo!.image.medium! as NSString, onGetImage: { (image) in
